@@ -20,6 +20,7 @@ gem 'rails_autolink', '~> 1.0.9'
 # It's for internal use only, and we monkeypatch certain methods
 gem 'hoptoad_notifier', "~> 2.4"
 
+gem 'rvm-capistrano', :require => false
 
 # Remove / comment out any of the gems below if you want to disable
 # a given issue tracker, notification service, or authentication.
@@ -74,8 +75,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.6'
   gem 'webmock', :require => false
   unless ENV["CI"]
-    gem 'ruby-debug', :platform => :mri_18
-    gem 'debugger', :platform => :mri_19
+    # gem 'ruby-debug', :platform => :mri_18
+    # gem 'debugger', :platform => :mri_19
     gem 'pry-rails'
   end
 #  gem 'rpm_contrib'
