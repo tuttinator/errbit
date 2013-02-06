@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'mongoid', '~> 2.4.10'
 gem 'mongoid_rails_migrations'
-gem 'devise', '~> 1.5.3'
+gem 'devise', '~> 1.5.4'
 gem 'haml'
 gem 'htmlentities', "~> 4.3.0"
 gem 'rack-ssl', :require => 'rack/ssl'   # force SSL
@@ -12,7 +12,7 @@ gem 'useragent', '~> 0.3.1'
 gem 'inherited_resources'
 gem 'SystemTimer', :platform => :ruby_18
 gem 'actionmailer_inline_css', "~> 1.3.0"
-gem 'kaminari'
+gem 'kaminari', '>= 0.14.1'
 gem 'rack-ssl-enforcer'
 gem 'fabrication', "~> 1.3.0"   # Used for both tests and demo data
 gem 'rails_autolink', '~> 1.0.9'
@@ -38,7 +38,7 @@ gem 'ruby-fogbugz', :require => 'fogbugz'
 # Github Issues
 gem 'octokit', '~> 1.0.0'
 # Gitlab
-gem 'gitlab'
+gem 'gitlab', :git => 'git://github.com/NARKOZ/gitlab'
 
 # Bitbucket Issues
 gem 'bitbucket_rest_api'
@@ -55,6 +55,8 @@ gem 'xmpp4r'
 gem 'hoi'
 # Pushover (iOS Push notifications)
 gem 'rushover'
+# Hubot
+gem 'httparty'
 
 # Authentication
 # ---------------------------------------
@@ -108,6 +110,5 @@ group :assets do
   gem 'therubyracer', :platform => :ruby  # C Ruby (MRI) or Rubinius, but NOT Windows
   gem 'uglifier',     '>= 1.0.3'
   gem 'underscore-rails'
+  gem 'turbo-sprockets-rails3'
 end
-
-gem 'turbo-sprockets-rails3'

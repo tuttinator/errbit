@@ -96,7 +96,7 @@ describe App do
   context '#github_url_to_file' do
     it 'resolves to full path to file' do
       app = Fabricate(:app, :github_repo => "errbit/errbit")
-      app.github_url_to_file('/path/to/file').should == "https://github.com/errbit/errbit/blob/master/path/to/file"
+      app.github_url_to_file('path/to/file').should == "https://github.com/errbit/errbit/blob/master/path/to/file"
     end
   end
 
@@ -262,6 +262,11 @@ describe App do
       @notice.current_user['name'].should == 'Mr. Bean'
       @notice.current_user['email'].should == 'mr.bean@example.com'
       @notice.current_user['username'].should == 'mrbean'
+    end
+
+    it 'captures the framework' do
+      @notice = App.report_error!(@xml)
+      @notice.framework.should == 'Rails: 3.2.11'
     end
 
   end

@@ -87,7 +87,7 @@ for you. Checkout [Airbrake](http://airbrakeapp.com) from the guys over at
 
 ```bash
 apt-get update
-apt-get install mongodb
+apt-get install mongodb-10gen
 ```
 
   * Install libxml and libcurl
@@ -124,20 +124,18 @@ rake errbit:bootstrap
 script/rails server
 ```
 
-**Deploying:**
+Deploying:
+----------
 
-  * Bootstrap Errbit. This will copy over config.yml and also seed the database.
-
-```bash
-rake errbit:bootstrap
-```
-
-  * Update the deploy.rb file with information about your server
+  * Copy `config/deploy.example.rb` to `config/deploy.rb`
+  * Update the `deploy.rb` or `config.yml` file with information about your server
   * Setup server and deploy
 
 ```bash
 cap deploy:setup deploy
 ```
+
+(Note: The capistrano deploy script will automatically generate a unique secret token.)
 
 **Deploying to Heroku:**
 
@@ -155,6 +153,7 @@ heroku create example-errbit --stack cedar
 heroku addons:add mongolab:starter
 heroku addons:add sendgrid:starter
 heroku config:add HEROKU=true
+heroku config:add SECRET_TOKEN="$(bundle exec rake secret)"
 heroku config:add ERRBIT_HOST=some-hostname.example.com
 heroku config:add ERRBIT_EMAIL_FROM=example@example.com
 git push heroku master
@@ -197,6 +196,12 @@ heroku run rake db:seed
 
 ```bash
 heroku addons:add deployhooks:http --url="http://YOUR_ERRBIT_HOST/deploys.txt?api_key=YOUR_API_KEY"
+```
+
+  * You may also want to configure a different secret token for each deploy:
+
+```bash
+heroku config:add SECRET_TOKEN=some-secret-token
 ```
 
   * Enjoy!
@@ -387,9 +392,7 @@ card_type = Defect, status = Open, priority = Essential
 
 * Account is the host of your gitlab installation. i.e. **http://gitlab.example.com**
 * To authenticate, Errbit uses token-based authentication. Get your API Key in your user settings (or create special user for this purpose)
-* You also need to provide project name (shortname) or ID (number) for issues to be created
-* **Currently (as of 3.0), Gitlab has 2000 character limit for issue description.** It is necessary to turn it off at your instance, because Errbit issues body is much longer. Please comment validation line in issue model in models folder https://github.com/gitlabhq/gitlabhq/blob/master/app/models/issue.rb#L10
-
+* You also need to provide project ID (it needs to be Number) for issues to be created
 
 
 What if Errbit has an error?
@@ -438,6 +441,13 @@ TODO
 ----
 
 * Add ability for watchers to be configured for types of notifications they should receive
+
+
+People using Errbit
+-------------------
+
+See our wiki page for a [list of people and companies around the world who use Errbit](https://github.com/errbit/errbit/wiki/People-using-Errbit).
+Feel free to [edit this page](https://github.com/errbit/errbit/wiki/People-using-Errbit/_edit), and add your name and country to the list if you are using Errbit.
 
 
 Special Thanks
