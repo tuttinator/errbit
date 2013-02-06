@@ -4,7 +4,7 @@
 - if Errbit::Config.github_authentication
   - content_for :action_bar do
     %div.action-bar
-      %span.github= link_to "Sign in with GitHub", user_omniauth_authorize_path(:github)
+      %span.github= link_to "Sign in with GitHub  #{ image_tag 'images/icons/github.png' }".html_safe, user_omniauth_authorize_path(:github), class: "btn btn-success"
 
 = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   .required
@@ -22,7 +22,7 @@
       = f.label :remember_me
 
   %div.buttons
-    %button{:type => 'submit', :class => 'sign_in'}= "Sign in"
+    %button{:type => 'submit', :class => 'btn btn-primary'}= "Sign in"
 
 :javascript
   $('a#forgot_password').click(function(){

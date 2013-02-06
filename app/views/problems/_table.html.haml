@@ -1,6 +1,6 @@
 - any_issue_links = problems.any?{|e| e.issue_link.present? && e.issue_link != 'pending' }
 =form_tag do
-  %table.errs.selectable
+  %table.errs.selectable.table-striped.table
     %thead
       %tr
         %th= check_box_tag "toggle_problems_checkboxes"
@@ -48,9 +48,9 @@
   = paginate problems
   .tab-bar
     %ul
-      %li= submit_tag 'Merge', :id => 'merge_problems', :class => 'button', 'data-action' => merge_several_problems_path
-      %li= submit_tag 'Unmerge', :id => 'unmerge_problems', :class => 'button', 'data-action' => unmerge_several_problems_path
-      %li= submit_tag 'Resolve', :id => 'resolve_problems', :class => 'button', 'data-action' => resolve_several_problems_path
-      %li= submit_tag 'Unresolve', :id => 'unresolve_problems', :class => 'button', 'data-action' => unresolve_several_problems_path
-      %li= submit_tag 'Delete', :id => 'delete_problems', :class => 'button', 'data-action' => destroy_several_problems_path
+      %li= submit_tag 'Merge', :id => 'merge_problems', :class => 'btn btn-info', 'data-action' => merge_several_problems_path
+      %li= submit_tag 'Unmerge', :id => 'unmerge_problems', :class => 'btn btn-info', 'data-action' => unmerge_several_problems_path
+      %li= submit_tag 'Resolve', :id => 'resolve_problems', :class => 'btn btn-success', 'data-action' => resolve_several_problems_path
+      %li= submit_tag 'Unresolve', :id => 'unresolve_problems', :class => 'btn btn-warning', 'data-action' => unresolve_several_problems_path
+      %li= submit_tag 'Delete', :id => 'delete_problems', :class => 'btn btn-danger', 'data-action' => destroy_several_problems_path
 
