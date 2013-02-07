@@ -1,5 +1,5 @@
 .window
-  %table.environment
+  %table.environment.table
     - html_entities = HTMLEntities.new
     - notice.env_vars.sort_by {|pair| pair[0]}.each do |key, value|
       %tr

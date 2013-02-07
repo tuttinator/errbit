@@ -25,7 +25,7 @@
     %h3 Comments
     - @problem.comments.each do |comment|
       .window
-        %table.comment
+        %table.comment.table
           %tr
             %th
               - if comment.user
@@ -51,7 +51,7 @@
 = paginate @notices, :param_name => :notice, :theme => :notices
 
 .tab-bar
-  %ul
+  %ul.nav.nav-tabs
     %li= link_to 'Summary', '#summary', :rel => 'summary', :class => 'button'
     %li= link_to 'Backtrace', '#backtrace', :rel => 'backtrace', :class => 'button'
     - if @notice && @notice.user_attributes.present?
