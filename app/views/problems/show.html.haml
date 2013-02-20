@@ -46,7 +46,7 @@
         = comment_form.text_area :body
         = comment_form.submit "Save Comment", class: "btn btn-success"
 
-%h4= @notice.try(:message)
+%h2= @notice.try(:message)
 
 = paginate @notices, :param_name => :notice, :theme => :notices
 
