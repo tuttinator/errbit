@@ -44,7 +44,7 @@
       = form_for [@app, @problem, @comment] do |comment_form|
         %p Add a comment
         = comment_form.text_area :body
-        = comment_form.submit "Save Comment"
+        = comment_form.submit "Save Comment", class: "btn btn-success"
 
 %h4= @notice.try(:message)
 

@@ -6,6 +6,9 @@
 .clear-right  { clear: right; }
 .nowrap       { white-space: nowrap; }
 
+body {
+  background: url(images/stripe.png);
+}
 
 #header #session-links #sign-out {
   background: transparent url(images/icons/bullet-red-sm.png) 12px 50% no-repeat;
@@ -30,11 +33,10 @@
 /* Make err title bar bigger to fit more buttons */
 #content-title.err_show {
   padding: 43px 24px 37px;
+  background: rgba(190, 169, 169, 0.28);
+  margin-bottom: 30px;
 }
 
-#content-comments {
-  background-color: #ffffff;
-}
 #content-title h1, #content-comments h3 {
   padding: 0; margin: 0;
   width: 85%;
@@ -59,8 +61,12 @@
 
 /* Content */
 #content {
-  padding: 20px; border-top: 1px solid #C6C6C6;
-  background-color: #FFF;
+  padding: 20px;
+  border-top: 1px solid #C6C6C6;
+  background-color: rgb(250, 250, 250);
+  box-shadow: inset rgb(199, 146, 146) 0px 0px 1000px;
+  border: 10px solid rgb(168, 116, 116);
+/*  border-radius: 20px; */
 }
 
 #content a.button {
@@ -516,4 +522,8 @@ table.users td {
 table.users td img.gravatar {
   vertical-align: middle;
   margin-left: 3px;
+}
+
+.label a {
+  color: #fff;
 }
