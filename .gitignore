@@ -13,5 +13,9 @@ config/newrelic.yml
 *~
 *.rbc
 .DS_Store
+<<<<<<< HEAD
 bin/
 config/nginx.errbit.conf
+=======
+*#
+>>>>>>> 20c1c9b0bb791e9ab016bf2f6c535bf6106c98a7
