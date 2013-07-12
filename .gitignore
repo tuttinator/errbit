@@ -18,3 +18,5 @@ bin
 bundle
 coverage
 *#
+.ruby-gemset
+.ruby-version
