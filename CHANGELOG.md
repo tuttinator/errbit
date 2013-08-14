@@ -4,15 +4,28 @@
 
 - Update some gems ([@shingara][])
 - [#492][] Improve some Pjax call ([@nfedyashev][])
-- [#428][] Add the support of Unfuddle Tracker ([@parallel588][])
+- [#428][] Add the support of Unfuddle Issue Tracker ([@parallel588][])
 - Avoid to delete his own user ([@shingara][])
-- [#456] Avoid to delete admin access of current user logged ([@shingara][])
+- [#456][] Avoid to delete admin access of current user logged ([@shingara][])
+- [#253][] Refactor the Fingerprint generation ([@boblail][])
+- [#508][] Merge comments to when you merge problems ([@shingara][])
+- Update the Devise Gem to the last one ([@shingara][])
+- [#524][] Add current user information on the notifer.js ([@roryf][])
+- [#523][] Update javascript-stacktrace ([@aliscott][])
+- [#516][] Add Jira Issue tracker ([@xenji][])
+- [#512][] Add capabilities to configure the use of sendmail to send
+  email from Errbit ([@shingara][])
+- [#532][] Use https link in Gravatar if you use errbit on https
+  ([@jeroenj][])
 
 ### Bug Fixes
 
 - [#343][] Fix the ical generation. ([@shingara][])
 - [#503][] Fix issue on where the service_url choose never use. ([@nfedyashev][])
 - [#506][] Fix issue on bitbucket issue tracker creation failed. ([@Gonzih][])
+- [#514][] Add CDATA in xml return by Javascript. ([@mildavw][])
+- [#517][] Javascript escape path from javascript Notifier. ([@roryf][])
+- [#518][] Fix issue when you try launch task errbit:db:update_update_problem_attrs. ([@shingara][])
 
 ## 0.1.0 - 2013-05-29
 
@@ -48,6 +61,7 @@
 
 <!-- Issue fix -->
 
+[#253]: https://github.com/errbit/errbit/issues/253
 [#343]: https://github.com/errbit/errbit/issues/343
 [#428]: https://github.com/errbit/errbit/issues/428
 [#453]: https://github.com/errbit/errbit/issues/453
@@ -67,21 +81,34 @@
 [#492]: https://github.com/errbit/errbit/issues/492
 [#503]: https://github.com/errbit/errbit/issues/503
 [#506]: https://github.com/errbit/errbit/issues/506
+[#508]: https://github.com/errbit/errbit/issues/508
+[#514]: https://github.com/errbit/errbit/issues/514
+[#516]: https://github.com/errbit/errbit/issues/516
+[#517]: https://github.com/errbit/errbit/issues/517
+[#524]: https://github.com/errbit/errbit/issues/524
+[#532]: https://github.com/errbit/errbit/issues/532
 
 <!-- Contributor on Errbit Thanks to all of them -->
 
+[@Gonzih]: https://github.com/Gonzih
 [@SamSaffron]: https://github.com/SamSaffron
 [@adamjt]: https://github.com/adamjt
+[@aliscott]: http://github.com/aliscott
 [@alvarobp]: https://github.com/alvarobp
+[@arthurnn]: https://github.com/arthurnn
+[@boblail]: https://github.com/boblail
 [@chadcf]: https://github.com/chadcf
+[@ivanyv]: https://github.com/ivanyv
+[@jeroenj]: https://github.com/jeroenj
+[@manuelmeurer]: https://github.com/manuelmeurer
 [@mildavw]: https://github.com/mildavw
+[@mildavw]: https://github.com/mildavw
+[@nfedyashev]: https://github.com/nfedyashev
+[@parallel588]: https://github.com/parallel588
+[@roryf]: https://github.com/roryf
 [@sdepold]: https://github.com/sdepold
 [@shingara]: https://github.com/shingara
 [@tamaloa]: https://github.com/tamaloa
-[@ivanyv]: https://github.com/ivanyv
-[@manuelmeurer]: https://github.com/manuelmeurer
 [@tvdeyen]: https://github.com/tvdeyen
-[@nfedyashev]: https://github.com/nfedyashev
-[@parallel588]: https://github.com/parallel588
-[@Gonzih]: https://github.com/Gonzih
+[@xenji]: https://github.com/xenji
 

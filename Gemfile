@@ -5,19 +5,18 @@ gem 'mongoid', '~> 2.7.1'
 
 # Mongoid rails migration > 0.0.14 is not compatible to Mongoid 2.x
 gem 'mongoid_rails_migrations', '~> 0.0.14'
-gem 'devise', '~> 1.5.4'
+gem 'devise', '~> 2.2.6' # Last version supporting ruby 1.8.7
 gem 'haml'
 gem 'htmlentities'
 gem 'rack-ssl', :require => 'rack/ssl'   # force SSL
 
 gem 'useragent'
-gem 'inherited_resources'
 gem 'decent_exposure'
 gem 'strong_parameters'
 gem 'SystemTimer', :platform => :ruby_18
-gem 'actionmailer_inline_css', "~> 1.3.0"
+gem 'actionmailer_inline_css'
 gem 'kaminari', '>= 0.14.1'
-gem 'rack-ssl-enforcer'
+gem 'rack-ssl-enforcer', :require => false
 # fabrication 1.3.0 is last supporting ruby 1.8. Update when stop supporting this version too
 gem 'fabrication', "~> 1.3.0"   # Used for both tests and demo data
 gem 'rails_autolink'
@@ -45,11 +44,14 @@ gem 'octokit'
 gem 'gitlab', :git => 'https://github.com/NARKOZ/gitlab.git'
 
 # Bitbucket Issues
-gem 'bitbucket_rest_api'
+gem 'bitbucket_rest_api', :require => false
 
 # Unfuddle
 gem "taskmapper", "~> 0.8.0"
 gem "taskmapper-unfuddle", "~> 0.7.0"
+
+# Jira
+gem 'jira-ruby', :require => 'jira'
 
 # Notification services
 # ---------------------------------------
@@ -65,6 +67,8 @@ gem 'hoi'
 gem 'rushover'
 # Hubot
 gem 'httparty'
+# Flowdock
+gem 'flowdock'
 
 # Authentication
 # ---------------------------------------
@@ -85,13 +89,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.6'
   gem 'webmock', :require => false
   gem 'airbrake', :require => false
-  unless ENV["CI"]
-    gem 'ruby-debug', :platform => :mri_18
-    gem 'debugger', :platform => :mri_19
-    gem 'pry-rails'
-  end
+  gem 'ruby-debug', :platform => :mri_18
+  gem 'debugger', :platform => :mri_19
+  gem 'pry-rails'
 #  gem 'rpm_contrib'
 #  gem 'newrelic_rpm'
+  gem 'quiet_assets'
 end
 
 group :development do
@@ -115,7 +118,7 @@ group :test do
   # DatabaseCleaner 1.0.0 drop the support of ruby 1.8.7
   gem 'database_cleaner', '~> 0.9.0'
   gem 'email_spec'
-  gem 'timecop'
+  gem 'timecop', '0.6.1' # last version compatible to ruby 1.8
   gem 'coveralls', :require => false
 end
 

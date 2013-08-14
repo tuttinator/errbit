@@ -104,7 +104,7 @@ describe Problem do
 
     it "should record the time when it was resolved" do
       problem = Fabricate(:problem)
-      expected_resolved_at = Time.now
+      expected_resolved_at = Time.zone.now
       Timecop.freeze(expected_resolved_at) do
         problem.resolve!
       end
@@ -123,12 +123,12 @@ describe Problem do
     it "should throw an err if it's not successful" do
       problem = Fabricate(:problem)
       problem.should_not be_resolved
-      problem.stub!(:valid?).and_return(false)
+      problem.stub(:valid?).and_return(false)
       ## update_attributes not test #valid? but #errors.any?
       # https://github.com/mongoid/mongoid/blob/master/lib/mongoid/persistence.rb#L137
       er = ActiveModel::Errors.new(problem)
       er.add_on_blank(:resolved)
-      problem.stub!(:errors).and_return(er)
+      problem.stub(:errors).and_return(er)
       problem.should_not be_valid
       lambda {
         problem.resolve!
@@ -151,7 +151,6 @@ describe Problem do
       expect { Fabricate(:problem).unmerge! }.not_to raise_error
     end
   end
-
 
   context "Scopes" do
     context "resolved" do
