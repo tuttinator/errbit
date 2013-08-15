@@ -9,7 +9,7 @@ app_path  = File.expand_path(File.join(File.dirname(__FILE__), ".."))
 
 pids_path = File.expand_path(File.join(File.dirname(__FILE__), "../../../shared/pids"))
 
-listen "#{pids_path}/unicorn.obv.sock" # by default Unicorn listens on port 8080
+listen "#{pids_path}/unicorn.sock" # by default Unicorn listens on port 8080
 
 
 pid "#{pids_path}/unicorn.pid"
