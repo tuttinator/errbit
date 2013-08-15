@@ -1,11 +1,14 @@
 source 'http://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails', '3.2.14'
 gem 'mongoid', '~> 2.7.1'
 
 # Mongoid rails migration > 0.0.14 is not compatible to Mongoid 2.x
 gem 'mongoid_rails_migrations', '~> 0.0.14'
 gem 'devise', '~> 2.2.6' # Last version supporting ruby 1.8.7
+
 gem 'haml'
 gem 'htmlentities'
 gem 'rack-ssl', :require => 'rack/ssl'   # force SSL
@@ -24,6 +27,7 @@ gem 'rails_autolink'
 # It's for internal use only, and we monkeypatch certain methods
 gem 'hoptoad_notifier', "~> 2.4"
 
+gem 'rvm-capistrano', :require => false
 
 # Remove / comment out any of the gems below if you want to disable
 # a given issue tracker, notification service, or authentication.
@@ -92,6 +96,11 @@ group :development, :test do
   gem 'ruby-debug', :platform => :mri_18
   gem 'debugger', :platform => :mri_19
   gem 'pry-rails'
+  unless ENV["CI"]
+    # gem 'ruby-debug', :platform => :mri_18
+    # gem 'debugger', :platform => :mri_19
+    gem 'pry-rails'
+  end
 #  gem 'rpm_contrib'
 #  gem 'newrelic_rpm'
   gem 'quiet_assets'
@@ -131,7 +140,6 @@ end
 # in production environments by default.
 group :assets do
   gem 'execjs'
-  gem 'therubyracer', :platform => :ruby  # C Ruby (MRI) or Rubinius, but NOT Windows
   gem 'uglifier',     '>= 1.0.3'
   # We can't upgrade because not compatible to jquery >= 1.9.
   # To do that, we need fix the rails.js

@@ -17,6 +17,7 @@
   - if current_user.authentication_token
     %span= link_to 'iCal', polymorphic_path([app, problem], :format => "ics", :auth_token => current_user.authentication_token), :class => "calendar_link"
   %span>= link_to 'up', (request.env['HTTP_REFERER'] ? :back : app_problems_path(app)), :class => 'up'
+
   %br
   = render "issue_tracker_links"
 
@@ -25,7 +26,7 @@
     %h3 Comments
     - problem.comments.each do |comment|
       .window
-        %table.comment
+        %table.comment.table
           %tr
             %th
               - if comment.user
@@ -44,14 +45,14 @@
       = form_for [app, problem, @comment] do |comment_form|
         %p Add a comment
         = comment_form.text_area :body
-        = comment_form.submit "Save Comment"
+        = comment_form.submit "Save Comment", class: "btn btn-success"
 
-%h4= @notice.try(:message)
+%h2= @notice.try(:message)
 
 = paginate @notices, :param_name => :notice, :theme => :notices
 
 .tab-bar
-  %ul
+  %ul.nav.nav-tabs
     %li= link_to 'Summary', '#summary', :rel => 'summary', :class => 'button'
     %li= link_to 'Backtrace', '#backtrace', :rel => 'backtrace', :class => 'button'
     - if @notice && @notice.user_attributes.present?

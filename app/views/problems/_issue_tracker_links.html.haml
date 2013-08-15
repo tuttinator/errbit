@@ -5,6 +5,7 @@
   - elsif problem.issue_link == "pending"
     %span.disabled= link_to 'creating...', '#', :class => "#{problem.issue_type}_inactive create-issue"
     = link_to 'retry', create_issue_app_problem_path(app, problem), :method => :post
+
   - else
     - if app.github_repo?
       - if current_user.can_create_github_issues?

@@ -1,6 +1,6 @@
 - any_issue_links = problems.any?{|e| e.issue_link.present? && e.issue_link != 'pending' }
 =form_tag do
-  %table.errs.selectable
+  %table.errs.selectable.table-striped.table
     %thead
       %tr
         %th= check_box_tag "toggle_problems_checkboxes"
@@ -35,7 +35,9 @@
                 %em= truncate(comment.body, :length => 100, :separator => ' ')
           %td.latest #{time_ago_in_words(problem.last_notice_at)} ago
           %td.deploy= problem.last_deploy_at ? problem.last_deploy_at.to_s(:micro) : 'n/a'
-          %td.count= link_to problem.notices_count, app_problem_path(problem.app, problem)
+          %td.count
+            %span.label.label-important
+              = link_to problem.notices_count, app_problem_path(problem.app, problem)
           - if any_issue_links
             %td.issue_link
               - if problem.app.issue_tracker_configured? && problem.issue_link.present? && problem.issue_link != 'pending'

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/NARKOZ/gitlab.git
-  revision: 53d7a8a86dfed63e56eeb16ea496bb7a82de337e
+  revision: 9fb83173be683a9448c57c94104b24bb39570bd7
   specs:
     gitlab (2.2.0)
       httparty
@@ -59,9 +59,9 @@ GEM
       multi_json (~> 1.3)
       nokogiri (~> 1.5.2)
       simple_oauth
-    bson (1.8.6)
-    bson_ext (1.8.6)
-      bson (~> 1.8.6)
+    bson (1.9.1)
+    bson_ext (1.9.1)
+      bson (~> 1.9.1)
     builder (3.0.4)
     callsite (0.0.11)
     campy (0.1.3)
@@ -137,7 +137,7 @@ GEM
     hashie (1.2.0)
     highline (1.6.19)
     hike (1.2.3)
-    hipchat (0.10.0)
+    hipchat (0.11.0)
       httparty
     hoi (0.0.6)
       httparty (> 0.6.0)
@@ -168,8 +168,7 @@ GEM
     kgio (2.8.0)
     launchy (2.3.0)
       addressable (~> 2.3)
-    libv8 (3.11.8.17)
-    libxml-ruby (2.6.0)
+    libxml-ruby (2.7.0)
     lighthouse-api (2.0)
       activeresource (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -178,14 +177,14 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta_request (0.2.7)
+    meta_request (0.2.8)
       callsite
       rack-contrib
       railties
     method_source (0.8.2)
     mime-types (1.24)
-    mongo (1.8.6)
-      bson (~> 1.8.6)
+    mongo (1.9.1)
+      bson (~> 1.9.1)
     mongoid (2.7.1)
       activemodel (~> 3.1)
       mongo (~> 1.8)
@@ -289,11 +288,10 @@ GEM
     rbx-require-relative (0.0.9)
     rdoc (3.12.2)
       json (~> 1.4)
-    ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ri_cal (0.8.8)
-    rspec-core (2.14.4)
+    rspec-core (2.14.5)
     rspec-expectations (2.14.1)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.3)
@@ -318,7 +316,7 @@ GEM
     rvm-capistrano (1.4.4)
       capistrano (>= 2.15.4)
     safe_yaml (0.9.5)
-    selenium-webdriver (2.34.0)
+    selenium-webdriver (2.35.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
       rubyzip
@@ -345,9 +343,6 @@ GEM
     taskmapper-unfuddle (0.7.0)
       addressable (~> 2.2)
       taskmapper (~> 0.8)
-    therubyracer (0.11.4)
-      libv8 (~> 3.11.8.12)
-      ref
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -443,7 +438,6 @@ DEPENDENCIES
   strong_parameters
   taskmapper (~> 0.8.0)
   taskmapper-unfuddle (~> 0.7.0)
-  therubyracer
   thin
   timecop (= 0.6.1)
   turbo-sprockets-rails3

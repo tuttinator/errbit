@@ -20,3 +20,5 @@ coverage
 *#
 .ruby-gemset
 .ruby-version
+bin/
+config/nginx.errbit.conf
