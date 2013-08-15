@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.14'
 gem 'mongoid', '~> 2.7.1'
 
 # Mongoid rails migration > 0.0.14 is not compatible to Mongoid 2.x
@@ -99,7 +99,7 @@ end
 
 group :development do
   gem 'capistrano'
-
+  gem 'rvm-capistrano'
   # better errors
   gem 'better_errors'    , :platform => :ruby_19
   gem 'binding_of_caller', :platform => :ruby_19
